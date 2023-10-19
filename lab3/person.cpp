@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Person.h"
+#include "person.h"
 /**
 * TO DO:
 * Refer to Person.h. Person.h acts as an interface to the Person object.
@@ -70,12 +70,35 @@ this->lives_in_IE = lives_in_IE;
 /**
 * @brief changes the name into new_name
 *
-* @param new_name
+* @param new_name (string)
 */
 void Person::updateName(string new_name)
 {
 name = new_name;
 }
+
+/**
+* @brief changes the age into new_age
+*
+* @param new_age (int)
+*/
+void Person::updateAge(int new_age)
+{
+    age = new_age;
+}
+/**
+* @brief changes the occupation into new_occupation
+*
+* @param new_occupation (string)
+*/
+void Person::updateOccupation(string new_occupation)
+{
+    occupation = new_occupation;
+}
+
+
+
+
 /**
 * @brief changes if the person is from the IE to not from the IE
 * and vice versa
@@ -84,6 +107,12 @@ name = new_name;
 */
 void Person::movedLocation()
 {
+    if (lives_in_IE == true){
+        lives_in_IE = false;
+    } 
+    else {
+        lives_in_IE = true;
+    }
 }
 /**
 * @brief returns the name of the Person object
@@ -93,6 +122,40 @@ void Person::movedLocation()
 string Person::getName() const{
 return name;
 }
+
+
+/**
+* @brief returns the age of the Person object
+*
+* @return int
+*/
+int Person::getAge() const
+{
+    return age;
+}
+
+/**
+* @brief returns the occupation of the Person object
+*
+* @return string
+*/
+string Person::getOccupation() const
+{
+    return occupation;
+}
+
+/**
+* @brief returns the lives_in_IE of the Person object
+*
+* @return bool
+*/
+bool Person::getLivesInIE() const
+{
+    return lives_in_IE;
+}
+
+
+
 /**
 * @brief Compares the age of person b with the implicit Person class.
 *
@@ -100,6 +163,14 @@ return name;
 * @return true if implicit Person is older than b
 * @return false if implict Person is younger or equal to b
 */
+
 bool Person::isOlderThan(Person b) const
 {
-return false; // you should modify this
+if (age > b.getAge())
+{
+    return true;
+}
+else{
+    return false;
+}
+}
