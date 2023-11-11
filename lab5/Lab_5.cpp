@@ -1,8 +1,8 @@
 /***
  * CSE 2010 Fall 2023
- * Lab #{n}
- * {Student Name} #{Coyote ID}
- * {Date}
+ * Lab #{5}
+ * {dan Nguyen} #{007736788}
+ * {11-10-2023}
  *
  * {Description of lab AKA paraphrase "abstract" section from lab}
  *
