@@ -4,10 +4,11 @@
  * {dan Nguyen} #{007736788}
  * {11-10-2023}
  *
- * {Description of lab AKA paraphrase "abstract" section from lab}
+ * {this labs create a csv that makes numbers and their time to create the numbers thru break points}
  *
- * {Describe 1) what was most challenging and 2) how you solved/overcame the problem OR
- * the directions of how you PLAN to solve it}
+ * {Describe 1) the hardest part of this lab is getting the time to work properley as it keeps stating zero and a way to fix this error is to look thru the code and search
+ *  the runtime function to see what caused the problem
+ * 
  *
 ***/
 
@@ -65,19 +66,21 @@ int main()
                             500000, 1000000, 2000000, 5000000, 10000000, 100000000, 500000000};
 
     // create vector of runs for binarySearch
-
+    vector<double>bin_run;
 
     //create a for loop to go through all the element sizes
     for(int i = 0; i < BIN_NUM_SIZES; i++) {
         // create sa with vectors of up to arr_n[i] elements
-
+        int n = arr_n2[i];
+        SearchAnalysis sa2 = SearchAnalysis(n, exclusive_range);
 
         // record how long binarySearch runs for and append the time to your vector for binarySearch runs
-
+        double elapsed_bin_time = sa2.runTime(false, elem);
+        bin_run.push_back(elapsed_bin_time);
     }
     
     // save the times under BigO_binarySearch.csv
-
-
+    string filename_bin = "BigO_binarySearch.csv";
+    sa.writeToFile(filename_bin, bin_run, arr_n2);
 }
 
